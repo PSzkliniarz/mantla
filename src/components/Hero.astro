@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import f1Image from '../assets/f1.jpg';
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+	<!-- Background Image -->
+	<div class="absolute inset-0 z-0">
+		<Image 
+			src={f1Image} 
+			alt="Alpinistyka przemysłowa" 
+			class="w-full h-full object-cover"
+			fetchpriority="high"
+			width={1920}
+			height={1080}
+		/>
+		<!-- Dark Overlay -->
+		<div class="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/60 to-orange-600/40"></div>
+	</div>
+	
+	<!-- Content -->
+	<div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+		<div class="animate-fade-in-up">
+			<h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+				<span class="bg-gradient-to-r from-white to-orange-400 bg-clip-text text-transparent">
+					Profesjonalna
+				</span>
+				<br />
+				<span class="bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">
+					Alpinistyka Przemysłowa
+				</span>
+			</h1>
+			
+			<p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed font-light">
+				Specjalizujemy się w pracach na wysokościach z wykorzystaniem technik alpinistycznych. 
+				Oferujemy kompleksowe usługi dla przemysłu, budownictwa i energetyki z najwyższymi standardami bezpieczeństwa.
+			</p>
+			
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a 
+					href="#services" 
+					class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+				>
+					Nasze Usługi
+				</a>
+				<a 
+					href="#contact" 
+					class="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+				>
+					Skontaktuj się
+				</a>
+			</div>
+			
+			<!-- Trust Indicators -->
+			<div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+				<div class="transform hover:scale-110 transition-transform duration-300">
+					<div class="text-3xl font-bold text-orange-400">10+</div>
+					<div class="text-sm text-blue-100 mt-1">Lat doświadczenia</div>
+				</div>
+				<div class="transform hover:scale-110 transition-transform duration-300">
+					<div class="text-3xl font-bold text-orange-400">500+</div>
+					<div class="text-sm text-blue-100 mt-1">Zrealizowanych projektów</div>
+				</div>
+				<div class="transform hover:scale-110 transition-transform duration-300">
+					<div class="text-3xl font-bold text-orange-400">100%</div>
+					<div class="text-sm text-blue-100 mt-1">Bezpieczeństwa</div>
+				</div>
+				<div class="transform hover:scale-110 transition-transform duration-300">
+					<div class="text-3xl font-bold text-orange-400">24/7</div>
+					<div class="text-sm text-blue-100 mt-1">Dostępność</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Scroll Indicator -->
+	<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+		<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+		</svg>
+	</div>
+</section>
+
+<style>
+	@keyframes fade-in-up {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	
+	.animate-fade-in-up {
+		animation: fade-in-up 1s ease-out;
+	}
+</style>
