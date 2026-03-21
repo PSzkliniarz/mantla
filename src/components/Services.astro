@@ -1,83 +1,256 @@
 ---
+import { Image } from 'astro:assets';
+import snowImage from '../assets/zrzucanie_sniegu.jpg';
+import birdsImage from '../assets/ptaki.jpg';
+import cleaningImage from '../assets/mycie.png';
+import remontImage from '../assets/remont.jpg';
+import dekarzImage from '../assets/dekarz.png';
+import kratkaImage from '../assets/kratka.jpg';
+import montazImage from '../assets/montaz.jpg';
+
 ---
 
 <section id="services" class="py-20 bg-[#f4f6f8]">
 	<div class="max-w-6xl mx-auto px-4">
 		<div class="text-center mb-16">
 			<h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#222222]">
-				Nasze Usługi
+				Zakres Naszych Usług
 			</h2>
 			<div class="w-24 h-1 bg-[#0ea5c6] rounded-full mx-auto mb-6"></div>
 			<p class="text-lg text-[#222222] max-w-3xl mx-auto leading-relaxed">
-				Oferujemy szeroki zakres usług alpinistycznych dla przemysłu. Każde zlecenie realizujemy
-				z najwyższą starannością, stosując najnowsze standardy bezpieczeństwa.
+				Kompleksowe usługi alpinistyczne dla przemysłu i budownictwa z najwyższymi standardami bezpieczeństwa.
 			</p>
 		</div>
 		
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<!-- Prace dekarskie -->
 			<div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-[#dddddd]">
-				<div class="bg-[#0ea5c6] h-2"></div>
-				<div class="p-8">
-					<div class="w-16 h-16 bg-[#f4f6f8] border-2 border-[#0ea5c6] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#0ea5c6] transition-colors duration-300">
-						<span class="text-2xl group-hover:text-white transition-colors">🏗️</span>
-					</div>
-					<h3 class="text-xl font-bold text-[#222222] mb-4">Montaż konstrukcji</h3>
-					<p class="text-[#222222] leading-relaxed">Montaż konstrukcji stalowych, reklamowych i przemysłowych na wysokościach z pełnym bezpieczeństwem</p>
+				<div class="relative h-48">
+					<Image 
+						src={dekarzImage} 
+						alt="Prace dekarskie" 
+						class="w-full h-full object-cover"
+						width={400}
+						height={200}
+					/>
+				</div>
+				<div class="p-6">
+					<h3 class="text-xl font-bold text-[#222222] mb-4">Prace dekarskie</h3>
+					<p class="text-sm text-[#666] mb-4 font-medium">usuwanie awarii i przecieków:</p>
+					<ul class="space-y-2 text-[#222222]">
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>uszczelnianie dachów i kominów</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>naprawy obróbek blacharskich</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>wymiana rynien i rur spustowych</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>naprawy koszy dachowych i elementów pokrycia</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 			
+			<!-- Naprawy i remonty elewacji -->
 			<div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-[#dddddd]">
-				<div class="bg-[#0ea5c6] h-2"></div>
-				<div class="p-8">
-					<div class="w-16 h-16 bg-[#f4f6f8] border-2 border-[#0ea5c6] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#0ea5c6] transition-colors duration-300">
-						<span class="text-2xl group-hover:text-white transition-colors">🧹</span>
-					</div>
-					<h3 class="text-xl font-bold text-[#222222] mb-4">Mycie i czyszczenie</h3>
-					<p class="text-[#222222] leading-relaxed">Profesjonalne mycie fasad, okien i powierzchni szklanych budynków z wykorzystaniem technik alpinistycznych</p>
+				<div class="relative h-48">
+					<Image 
+						src={remontImage} 
+						alt="Prace dekarskie" 
+						class="w-full h-full object-cover"
+						width={400}
+						height={200}
+					/>
+				</div>
+				<div class="p-6">
+					<h3 class="text-xl font-bold text-[#222222] mb-4">Naprawy i remonty elewacji</h3>
+					<ul class="space-y-2 text-[#222222]">
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>uszczelnianie pęknięć i ubytków</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>naprawy po ptakach</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>usuwanie luźnych elementów zagrażających bezpieczeństwu</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>malowanie elewacji</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 			
+			<!-- Zabezpieczenia przed ptakami -->
 			<div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-[#dddddd]">
-				<div class="bg-[#0ea5c6] h-2"></div>
-				<div class="p-8">
-					<div class="w-16 h-16 bg-[#f4f6f8] border-2 border-[#0ea5c6] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#0ea5c6] transition-colors duration-300">
-						<span class="text-2xl group-hover:text-white transition-colors">🔧</span>
-					</div>
-					<h3 class="text-xl font-bold text-[#222222] mb-4">Konserwacja</h3>
-					<p class="text-[#222222] leading-relaxed">Przeglądy i konserwacja obiektów przemysłowych i budynków na wysokościach</p>
+				<div class="relative h-48">
+					<Image 
+						src={birdsImage} 
+						alt="Zabezpieczenia przed ptakami" 
+						class="w-full h-full object-cover"
+						width={400}
+						height={200}
+					/>
+				</div>
+				<div class="p-6">
+					<h3 class="text-xl font-bold text-[#222222] mb-4">Zabezpieczenia przed ptakami</h3>
+					<ul class="space-y-2 text-[#222222]">
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>montaż kolców</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>montaż siatek (balkony, wnęki, dachy)</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 			
+			<!-- Prace montażowe na wysokości -->
 			<div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-[#dddddd]">
-				<div class="bg-[#0ea5c6] h-2"></div>
-				<div class="p-8">
-					<div class="w-16 h-16 bg-[#f4f6f8] border-2 border-[#0ea5c6] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#0ea5c6] transition-colors duration-300">
-						<span class="text-2xl group-hover:text-white transition-colors">⚡</span>
-					</div>
-					<h3 class="text-xl font-bold text-[#222222] mb-4">Prace elektryczne</h3>
-					<p class="text-[#222222] leading-relaxed">Instalacja i konserwacja oświetlenia, instalacji elektrycznych na wysokości</p>
+				<div class="relative h-48">
+					<Image 
+						src={kratkaImage} 
+						alt="Prace montażowe na wysokości" 
+						class="w-full h-full object-cover"
+						width={400}
+						height={200}
+					/>
+				</div>
+				<div class="p-6">
+					<h3 class="text-xl font-bold text-[#222222] mb-4">Prace montażowe na wysokości</h3>
+					<ul class="space-y-2 text-[#222222]">
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>montaż banerów reklamowych</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>kratki wentylacyjne</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>zabezpieczenia techniczne budynków</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 			
+			<!-- Czyszczenie i konserwacja -->
 			<div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-[#dddddd]">
-				<div class="bg-[#0ea5c6] h-2"></div>
-				<div class="p-8">
-					<div class="w-16 h-16 bg-[#f4f6f8] border-2 border-[#0ea5c6] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#0ea5c6] transition-colors duration-300">
-						<span class="text-2xl group-hover:text-white transition-colors">🎨</span>
-					</div>
-					<h3 class="text-xl font-bold text-[#222222] mb-4">Malowanie</h3>
-					<p class="text-[#222222] leading-relaxed">Malowanie konstrukcji, fasad i elementów budynków na wysokościach</p>
+				<div class="relative h-48">
+					<Image 
+						src={cleaningImage} 
+						alt="Czyszczenie i konserwacja" 
+						class="w-full h-full object-cover"
+						width={400}
+						height={200}
+					/>
+				</div>
+				<div class="p-6">
+					<h3 class="text-xl font-bold text-[#222222] mb-4">Czyszczenie i konserwacja</h3>
+					<ul class="space-y-2 text-[#222222]">
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>czyszczenie rynien</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>mycie elewacji i okien</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>prace porządkowe w trudno dostępnych miejscach</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 			
+			<!-- Prace remontowe -->
 			<div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-[#dddddd]">
-				<div class="bg-[#0ea5c6] h-2"></div>
-				<div class="p-8">
-					<div class="w-16 h-16 bg-[#f4f6f8] border-2 border-[#0ea5c6] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#0ea5c6] transition-colors duration-300">
-						<span class="text-2xl group-hover:text-white transition-colors">📡</span>
-					</div>
-					<h3 class="text-xl font-bold text-[#222222] mb-4">Instalacje techniczne</h3>
-					<p class="text-[#222222] leading-relaxed">Montaż anten, kamer i innych urządzeń technicznych na wysokości</p>
+				<div class="relative h-48">
+					<Image 
+						src={montazImage} 
+						alt="Prace remontowe" 
+						class="w-full h-full object-cover"
+						width={400}
+						height={200}
+					/>
+				</div>
+				<div class="p-6">
+					<h3 class="text-xl font-bold text-[#222222] mb-4">Prace remontowe</h3>
+					<ul class="space-y-2 text-[#222222]">
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>uszczelnianie pęknięć na elewacji</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>naprawy/montaż/wymiana rur spustowych</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>uszczelnianie elewacji</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>punktowe naprawy elewacji powstałe w wyniku np. ingerencji ptaków</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>skuwanie tynku</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>antykorozja</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>demontaż różnego rodzaju konstrukcji</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- Prace zimowe -->
+			<div class="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-[#dddddd]">
+				<div class="relative h-48">
+					<Image 
+						src={snowImage} 
+						alt="Prace zimowe - odśnieżanie dachów" 
+						class="w-full h-full object-cover"
+						width={400}
+						height={200}
+					/>
+				</div>
+				<div class="p-6">
+					<h3 class="text-xl font-bold text-[#222222] mb-4">Prace zimowe</h3>
+					<ul class="space-y-2 text-[#222222]">
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>odśnieżanie dachów</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>usuwanie sopli</span>
+						</li>
+						<li class="flex items-start">
+							<span class="text-[#0ea5c6] mr-2">•</span>
+							<span>usuwanie zalegającego śniegu na krawędzi dachu</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
