@@ -16,6 +16,8 @@
 						<span class="text-3xl">🧗</span>
 						<span>Mantla</span>
 					</a>
+					
+					<!-- Desktop Menu -->
 					<ul class="hidden md:flex space-x-8">
 						<li><a href="#hero" class="text-[#222222] hover:text-[#0ea5c6] font-semibold transition-colors duration-300 relative group">
 							Start
@@ -36,6 +38,38 @@
 						<li><a href="#contact" class="text-[#222222] hover:text-[#0ea5c6] font-semibold transition-colors duration-300 relative group">
 							Kontakt
 							<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0ea5c6] transition-all duration-300 group-hover:w-full"></span>
+						</a></li>
+					</ul>
+					
+					<!-- Mobile Menu Button -->
+					<button 
+						id="mobile-menu-button" 
+						class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
+						aria-label="Toggle mobile menu"
+					>
+						<span class="block w-6 h-0.5 bg-[#222222] transition-all duration-300 origin-center"></span>
+						<span class="block w-6 h-0.5 bg-[#222222] transition-all duration-300 origin-center"></span>
+						<span class="block w-6 h-0.5 bg-[#222222] transition-all duration-300 origin-center"></span>
+					</button>
+				</div>
+				
+				<!-- Mobile Menu -->
+				<div id="mobile-menu" class="hidden md:hidden pb-4">
+					<ul class="flex flex-col space-y-2">
+						<li><a href="#hero" class="block py-2 text-[#222222] hover:text-[#0ea5c6] font-semibold transition-colors duration-300">
+							Start
+						</a></li>
+						<li><a href="#about" class="block py-2 text-[#222222] hover:text-[#0ea5c6] font-semibold transition-colors duration-300">
+							O nas
+						</a></li>
+						<li><a href="#services" class="block py-2 text-[#222222] hover:text-[#0ea5c6] font-semibold transition-colors duration-300">
+							Usługi
+						</a></li>
+						<li><a href="#projects" class="block py-2 text-[#222222] hover:text-[#0ea5c6] font-semibold transition-colors duration-300">
+							Realizacje
+						</a></li>
+						<li><a href="#contact" class="block py-2 text-[#222222] hover:text-[#0ea5c6] font-semibold transition-colors duration-300">
+							Kontakt
 						</a></li>
 					</ul>
 				</div>
@@ -95,6 +129,54 @@
 		</footer>
 	</body>
 </html>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const mobileMenuButton = document.getElementById('mobile-menu-button');
+		const mobileMenu = document.getElementById('mobile-menu');
+		
+		// Check if elements exist before using them
+		if (!mobileMenuButton || !mobileMenu) return;
+		
+		const buttonSpans = mobileMenuButton.querySelectorAll('span');
+		
+		mobileMenuButton.addEventListener('click', () => {
+			// Toggle menu visibility
+			mobileMenu.classList.toggle('hidden');
+			
+			// Animate hamburger to X
+			if (buttonSpans[0]) {
+				buttonSpans[0].classList.toggle('rotate-45');
+				buttonSpans[0].classList.toggle('translate-y-2');
+			}
+			if (buttonSpans[1]) {
+				buttonSpans[1].classList.toggle('opacity-0');
+			}
+			if (buttonSpans[2]) {
+				buttonSpans[2].classList.toggle('-rotate-45');
+				buttonSpans[2].classList.toggle('-translate-y-2');
+			}
+		});
+		
+		// Close menu when clicking on links
+		const mobileLinks = mobileMenu.querySelectorAll('a');
+		mobileLinks.forEach(link => {
+			link.addEventListener('click', () => {
+				mobileMenu.classList.add('hidden');
+				// Reset hamburger animation
+				if (buttonSpans[0]) {
+					buttonSpans[0].classList.remove('rotate-45', 'translate-y-2');
+				}
+				if (buttonSpans[1]) {
+					buttonSpans[1].classList.remove('opacity-0');
+				}
+				if (buttonSpans[2]) {
+					buttonSpans[2].classList.remove('-rotate-45', '-translate-y-2');
+				}
+			});
+		});
+	});
+</script>
 
 <style>
 	@import "../styles/global.css";
