@@ -1,0 +1,31 @@
+<div id="map" style="height: 400px; width: 100%;"></div>
+
+<script>
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet.css';
+
+  console.log('Map script loading...');
+
+  const center: [number, number] = [50.887, 20.6314];
+  const zoom: number = 7;
+  
+  // Initialize map
+  const map: L.Map = L.map('map').setView(center, zoom);
+  
+  // Add tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+  
+  // Add marker
+  L.marker(center).addTo(map)
+    .openPopup();
+
+  const circle: L.Circle = L.circle(center, {
+    radius: 100000,
+    color: '#3b82f6',
+    fillOpacity: 0.15,
+  }).addTo(map);
+    
+  console.log('Map initialized successfully');
+</script>
