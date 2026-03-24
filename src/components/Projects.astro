@@ -1,76 +1,166 @@
 ---
+import { Image } from 'astro:assets';
+
+// Import all gallery images
+import img1 from '../assets/galery/1774015068161.jpg';
+import img2 from '../assets/galery/1774023506728.jpg';
+import img3 from '../assets/galery/1774023506761.jpg';
+import img4 from '../assets/galery/1774023506784.jpg';
+import img5 from '../assets/galery/1774023506804.jpg';
+import img6 from '../assets/galery/1774023506823.jpg';
+import img7 from '../assets/galery/1774024474650.jpg';
+import img8 from '../assets/galery/1774024474658.jpg';
+import img9 from '../assets/galery/1774024474907.jpg';
+import img10 from '../assets/galery/1774024474919.jpg';
+import img11 from '../assets/galery/1774095462202.jpg';
+import img12 from '../assets/galery/image.png';
+
+const galleryImages = [
+	{ src: img1, alt: 'Realizacja 1' },
+	{ src: img2, alt: 'Realizacja 2' },
+	{ src: img3, alt: 'Realizacja 3' },
+	{ src: img4, alt: 'Realizacja 4' },
+	{ src: img5, alt: 'Realizacja 5' },
+	{ src: img6, alt: 'Realizacja 6' },
+	{ src: img7, alt: 'Realizacja 7' },
+	{ src: img8, alt: 'Realizacja 8' },
+	{ src: img9, alt: 'Realizacja 9' },
+	{ src: img10, alt: 'Realizacja 10' },
+	{ src: img11, alt: 'Realizacja 11' },
+	{ src: img12, alt: 'Realizacja 12' }
+];
 ---
 
-<section id="projects" class="py-16 bg-white">
-	<div class="max-w-6xl mx-auto px-4">
-		<h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
-			Realizacje
-		</h2>
-		<p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-			Poniżej przedstawiamy wybrane projekty, które zrealizowaliśmy dla naszych klientów.
-			Każde zlecenie to dla nas nowe wyzwanie i okazja do potwierdzenia naszego profesjonalizmu.
-		</p>
-		
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-			<div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-8 hover:border-blue-500 transition-all duration-300 hover:shadow-lg">
-				<div class="text-center">
-					<div class="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-						<span class="text-6xl">🏢</span>
-					</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-3">Biurowiec Centrum</h3>
-					<p class="text-gray-600 text-sm">Kompleksowe mycie fasad i konserwacja konstrukcji szklanych</p>
-				</div>
-			</div>
-			
-			<div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-8 hover:border-blue-500 transition-all duration-300 hover:shadow-lg">
-				<div class="text-center">
-					<div class="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-						<span class="text-6xl">🏭</span>
-					</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-3">Hala Produkcyjna</h3>
-					<p class="text-gray-600 text-sm">Montaż konstrukcji nośnych i instalacji przemysłowych</p>
-				</div>
-			</div>
-			
-			<div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-8 hover:border-blue-500 transition-all duration-300 hover:shadow-lg">
-				<div class="text-center">
-					<div class="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-						<span class="text-6xl">🏪</span>
-					</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-3">Centrum Handlowe</h3>
-					<p class="text-gray-600 text-sm">Montaż reklam i konserwacja elewacji</p>
-				</div>
-			</div>
-			
-			<div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-8 hover:border-blue-500 transition-all duration-300 hover:shadow-lg">
-				<div class="text-center">
-					<div class="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-						<span class="text-6xl">🏥</span>
-					</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-3">Szpital Miejski</h3>
-					<p class="text-gray-600 text-sm">Prace konserwacyjne na wysokościach i montaż instalacji</p>
-				</div>
-			</div>
-			
-			<div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-8 hover:border-blue-500 transition-all duration-300 hover:shadow-lg">
-				<div class="text-center">
-					<div class="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-						<span class="text-6xl">🏛️</span>
-					</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-3">Biblioteka Uniwersytecka</h3>
-					<p class="text-gray-600 text-sm">Renowacja fasady i konserwacja historycznej elewacji</p>
-				</div>
-			</div>
-			
-			<div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-8 hover:border-blue-500 transition-all duration-300 hover:shadow-lg">
-				<div class="text-center">
-					<div class="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-						<span class="text-6xl">🏨</span>
-					</div>
-					<h3 class="text-xl font-semibold text-gray-900 mb-3">Hotel Pięciogwiazdkowy</h3>
-					<p class="text-gray-600 text-sm">Kompleksowe prace na elewacji i montaż oświetlenia</p>
-				</div>
-			</div>
+<section id="projects" class="py-16 bg-[#f4f6f8]">
+	<div class="max-w-7xl mx-auto px-4">
+		<!-- Header -->
+		<div class="text-center mb-16">
+			<h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#222222]">
+				Nasze Realizacje
+			</h2>
+			<div class="w-24 h-1 bg-[#0ea5c6] rounded-full mx-auto mb-6"></div>
+			<p class="text-lg text-[#222222] max-w-3xl mx-auto leading-relaxed">
+				Poniżej prezentujemy wybrane projekty z naszej pracy. Każde zdjęcie pokazuje nasze zaangażowanie i profesjonalizm w realizacji zleceń na wysokościach.
+			</p>
 		</div>
+		
+		<!-- Gallery Grid -->
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[250px]">
+			{galleryImages.map((image, index) => (
+				<div 
+					class={`relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer group ${
+						index === 0 ? 'sm:col-span-2 sm:row-span-2 auto-rows-[500px]' : 
+						index === 3 ? 'lg:col-span-2 auto-rows-[350px]' : 
+						''
+					}`}
+				>
+					<Image 
+						src={image.src} 
+						alt={image.alt}
+						class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+						width={800}
+						height={600}
+						loading={index < 4 ? 'eager' : 'lazy'}
+					/>
+					
+					<!-- Overlay -->
+					<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+						<div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+							<div class="text-white">
+								<div class="text-sm font-medium mb-1">Projekt #{index + 1}</div>
+								<div class="text-xs text-gray-200">Kliknij aby powiększyć</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Zoom Icon -->
+					<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform scale-0 group-hover:scale-100">
+						<svg class="w-5 h-5 text-[#0ea5c6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+						</svg>
+					</div>
+				</div>
+			))}
+		</div>
+
 	</div>
 </section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden opacity-0 transition-opacity duration-300">
+	<div class="flex items-center justify-center h-full p-4">
+		<div class="relative max-w-7xl max-h-full">
+			<img id="lightbox-image" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
+			
+			<!-- Close button -->
+			<button id="lightbox-close" class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors">
+				<svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const galleryItems = document.querySelectorAll('#projects .group');
+		const lightbox = document.getElementById('lightbox');
+		const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
+		const closeButton = document.getElementById('lightbox-close');
+		
+		galleryItems.forEach((item, index) => {
+			item.addEventListener('click', () => {
+				// Get the image source from the clicked item
+				const img = item.querySelector('img') as HTMLImageElement;
+				if (img && lightbox && lightboxImage) {
+					lightboxImage.src = img.src;
+					lightboxImage.alt = `Projekt #${index + 1}`;
+					
+					// Show lightbox with fade-in effect
+					lightbox.classList.remove('hidden');
+					setTimeout(() => {
+						lightbox.classList.remove('opacity-0');
+						lightbox.classList.add('opacity-100');
+					}, 10);
+					
+					// Prevent body scroll
+					document.body.style.overflow = 'hidden';
+				}
+			});
+		});
+		
+		// Close lightbox when clicking close button
+		if (closeButton) {
+			closeButton.addEventListener('click', closeLightbox);
+		}
+		
+		// Close lightbox when clicking background
+		if (lightbox) {
+			lightbox.addEventListener('click', (e) => {
+				if (e.target === lightbox || e.target === lightbox.querySelector('.flex')) {
+					closeLightbox();
+				}
+			});
+		}
+		
+		// Close lightbox with Escape key
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
+				closeLightbox();
+			}
+		});
+		
+		function closeLightbox() {
+			if (lightbox) {
+				lightbox.classList.remove('opacity-100');
+				lightbox.classList.add('opacity-0');
+				
+				setTimeout(() => {
+					lightbox.classList.add('hidden');
+					document.body.style.overflow = '';
+				}, 300);
+			}
+		}
+	});
+</script>

@@ -17,10 +17,6 @@
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
   
-  // Add marker
-  L.marker(center).addTo(map)
-    .openPopup();
-
   const circle: L.Circle = L.circle(center, {
     radius: 100000,
     color: '#3b82f6',
