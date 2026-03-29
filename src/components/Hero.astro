@@ -1,14 +1,17 @@
 ---
-import { Image } from 'astro:assets';
-import headerImage from '../assets/header.jpg';
+import { Image } from "astro:assets";
+import headerImage from "../assets/header.jpg";
 ---
 
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<section
+	id="hero"
+	class="relative min-h-screen flex items-center justify-center overflow-hidden"
+>
 	<!-- Background Image -->
 	<div class="absolute inset-0 z-0">
-		<Image 
-			src={headerImage} 
-			alt="Alpinistyka przemysłowa" 
+		<Image
+			src={headerImage}
+			alt="Alpinistyka przemysłowa"
 			class="w-full h-full object-cover"
 			fetchpriority="high"
 			width={1920}
@@ -17,57 +20,90 @@ import headerImage from '../assets/header.jpg';
 		<!-- Dark Overlay -->
 		<div class="absolute inset-0 bg-black/60"></div>
 	</div>
-	
+
 	<!-- Content -->
-	<div class="relative z-10 text-center text-white px-6 sm:px-8 lg:px-4 max-w-5xl mx-auto">
+	<div
+		class="relative z-10 text-center text-white px-6 sm:px-8 lg:px-4 max-w-5xl mx-auto"
+	>
 		<div class="animate-fade-in-up">
-			<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
-				<span class="text-white">
-					NieProfesjonalna
-				</span>
+			<h1
+				class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight"
+			>
+				<span class="text-white">Profesjonalna</span>
 				<br />
-				<span class="text-[#0ea5c6]">
-					Alpinistyka Przemysłowa
-				</span>
+				<span class="text-[#0ea5c6]"> Alpinistyka Przemysłowa </span>
 			</h1>
-			
-			<p class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed font-light px-2 sm:px-0">
-Specjalizujemy się w pracach na wysokości w Kielcach i okolicach, wykonując naprawy dachów, usuwanie przecieków i prace dekarskie bez rusztowań. Realizujemy także naprawy elewacji, montaż zabezpieczeń przed ptakami oraz czyszczenie rynien i okien, gwarantując szybkie i solidne wykonanie.			</p>
-			
-			<div class="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">
-				<a 
-					href="#services" 
+
+			<p
+				class="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed font-light px-2 sm:px-0"
+			>
+				Specjalizujemy się w pracach na wysokości w Kielcach i
+				okolicach, wykonując naprawy dachów, usuwanie przecieków i prace
+				dekarskie bez rusztowań. Realizujemy także naprawy elewacji,
+				montaż zabezpieczeń przed ptakami oraz czyszczenie rynien i
+				okien, gwarantując szybkie i solidne wykonanie.
+			</p>
+
+			<div
+				class="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0"
+			>
+				<a
+					href="#services"
 					class="bg-[#0ea5c6] hover:bg-[#0a8ca6] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base no-underline"
 				>
 					Nasze Usługi
 				</a>
-				<a 
-					href="#contact" 
+				<a
+					href="#contact"
 					class="border-2 border-white text-white hover:bg-white hover:text-[#222222] font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-sm sm:text-base no-underline"
 				>
 					Skontaktuj się
 				</a>
 			</div>
-			
-			<!-- Trust Indicators -->
-			<div class="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-2 gap-4 sm:gap-8 text-center px-4 sm:px-0">
-				<div class="transform hover:scale-110 transition-transform duration-300">
-					<div class="text-2xl sm:text-3xl font-bold text-[#0ea5c6]">8+</div>
-					<div class="text-xs sm:text-sm text-gray-300 mt-1">Lat doświadczenia</div>
-				</div>
-				<div class="transform hover:scale-110 transition-transform duration-300">
-					<div class="text-2xl sm:text-3xl font-bold text-[#0ea5c6]">100%</div>
-					<div class="text-xs sm:text-sm text-gray-300 mt-1">Bezpieczeństwa</div>
-				</div>
 
+			<!-- Trust Indicators -->
+			<div
+				class="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-2 gap-4 sm:gap-8 text-center px-4 sm:px-0"
+			>
+				<div
+					class="transform hover:scale-110 transition-transform duration-300"
+				>
+					<div class="text-2xl sm:text-3xl font-bold text-[#0ea5c6]">
+						8+
+					</div>
+					<div class="text-xs sm:text-sm text-gray-300 mt-1">
+						Lat doświadczenia
+					</div>
+				</div>
+				<div
+					class="transform hover:scale-110 transition-transform duration-300"
+				>
+					<div class="text-2xl sm:text-3xl font-bold text-[#0ea5c6]">
+						100%
+					</div>
+					<div class="text-xs sm:text-sm text-gray-300 mt-1">
+						Bezpieczeństwa
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Scroll Indicator -->
-	<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-		<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+	<div
+		class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce"
+	>
+		<svg
+			class="w-6 h-6 text-white"
+			fill="none"
+			stroke="currentColor"
+			viewBox="0 0 24 24"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
 		</svg>
 	</div>
 </section>
@@ -83,7 +119,7 @@ Specjalizujemy się w pracach na wysokości w Kielcach i okolicach, wykonując n
 			transform: translateY(0);
 		}
 	}
-	
+
 	.animate-fade-in-up {
 		animation: fade-in-up 1s ease-out;
 	}
