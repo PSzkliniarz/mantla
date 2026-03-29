@@ -67,7 +67,7 @@ const galleryImages = [
 					<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 						<div class="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
 							<div class="text-white">
-								<div class="text-sm font-medium mb-1">Projekt #{index + 1}</div>
+								<div class="text-sm font-medium mb-1">{image.alt}</div>
 								<div class="text-xs text-gray-200">Kliknij aby powiększyć</div>
 							</div>
 						</div>
@@ -90,7 +90,12 @@ const galleryImages = [
 <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden opacity-0 transition-opacity duration-300">
 	<div class="flex items-center justify-center h-full p-4">
 		<div class="relative max-w-7xl max-h-full">
-			<img id="lightbox-image" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg">
+			<img id="lightbox-image" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg">
+			
+			<!-- Alt text display -->
+			<div id="lightbox-caption" class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-lg">
+				<p class="text-white text-lg font-medium"></p>
+			</div>
 			
 			<!-- Close button -->
 			<button id="lightbox-close" class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 hover:bg-white transition-colors">
@@ -102,20 +107,22 @@ const galleryImages = [
 	</div>
 </div>
 
-<script>
+<script define:vars={{ galleryImages }}>
 	document.addEventListener('DOMContentLoaded', () => {
 		const galleryItems = document.querySelectorAll('#projects .group');
 		const lightbox = document.getElementById('lightbox');
-		const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement;
+		const lightboxImage = document.getElementById('lightbox-image');
+		const lightboxCaption = document.getElementById('lightbox-caption');
 		const closeButton = document.getElementById('lightbox-close');
 		
 		galleryItems.forEach((item, index) => {
 			item.addEventListener('click', () => {
-				// Get the image source from the clicked item
-				const img = item.querySelector('img') as HTMLImageElement;
-				if (img && lightbox && lightboxImage) {
-					lightboxImage.src = img.src;
-					lightboxImage.alt = `Projekt #${index + 1}`;
+				// Use the galleryImages data instead of querying DOM
+				const imageData = galleryImages[index];
+				if (imageData && lightbox && lightboxImage && lightboxCaption) {
+					lightboxImage.src = imageData.src.src;
+					lightboxImage.alt = imageData.alt;
+					lightboxCaption.querySelector('p').textContent = imageData.alt;
 					
 					// Show lightbox with fade-in effect
 					lightbox.classList.remove('hidden');
